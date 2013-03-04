@@ -28,18 +28,11 @@
    return self;
 }
 
-
 - (UIView*) dummyVolume {
     // tell the system that "this window has an volume view inside it, so there is no need to show a system overlay"
     MPVolumeView* vv = [[MPVolumeView alloc] initWithFrame:CGRectMake(-1000, -1000, 100, 100)];
     vv.tag = 54870149;
     return vv;
-}
-
-
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
 }
 
 @end
